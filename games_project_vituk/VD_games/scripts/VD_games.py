@@ -1,4 +1,5 @@
-from games_project_vituk.VD_games.cli import welcome_user
+from VD_games.cli import welcome_user
+
 
 def main():
     welcome_user()

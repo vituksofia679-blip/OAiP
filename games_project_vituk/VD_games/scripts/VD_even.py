@@ -1,38 +1,23 @@
-import random
-import sys
+from VD_games.cli import welcome_user
+
+from VD_games.engine import run
+
+from VD_games.games.even import generate_question_answer
+
+def is_even(number: int) -> bool:
+    return number % 2 == 0
 
 
-def main():
-    print("Welcome to the VD-games!")
-    name = input("May I have your name? ").strip()
-    print(f"Hello, {name}!")
+def main() -> None:
+    user_name = welcome_user()
     print('Answer "yes" if the number is even, otherwise answer "no".')
-
-    correct_answers = 0
-    required_wins = 3
-
-    while correct_answers < required_wins:
-        number = random.randint(1, 100)
-        print(f"Question: {number}")
-        answer = input("Your answer: ").strip().lower()
-
-        expected = "yes" if number % 2 == 0 else "no"
-
-        if answer not in {"yes", "no"}:
-            print(f"'{answer}' is wrong answer ;(. Correct answer was '{expected}'.")
-            print(f"Let's try again, {name}!")
-            sys.exit(0)
-
-        if answer != expected:
-            print(f"'{answer}' is wrong answer ;(. Correct answer was '{expected}'.")
-            print(f"Let's try again, {name}!")
-            sys.exit(0)
-
-        print("Correct!")
-        correct_answers += 1
-
-    print(f"Congratulations, {name}!")
+    
+    run(
+        generate_question_answer=generate_question_answer,
+        check_answer=is_even,
+        user_name=user_name,
+    )
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

@@ -1,4 +1,6 @@
-from games_project_vituk.VD_games.scripts.VD_games import main
+from VD_games import greet
 
-if __name__ == "__main__":
-    main()
+def main():
+	greet()
+
+main()

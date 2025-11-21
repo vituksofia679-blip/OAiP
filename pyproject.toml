@@ -23,3 +23,7 @@ dev = [
 [project.scripts]
 VD-games = "games_project_vituk.VD_games.scripts.VD_games:main"
 VD-even = "games_project_vituk.VD_games.scripts.VD_even:main"
+VD-calc = "games_project_vituk.VD_games.scripts.VD_calc:main"
+VD-gcd = "games_project_vituk.VD_games.scripts.VD_gcd:main"
+VD-progression = "games_project_vituk.VD_games.scripts.VD_progression:main"
+VD-prime = "games_project_vituk.VD_games.scripts.VD_prime:main"
